@@ -1,0 +1,14 @@
+<div class="p-5">
+  <h1>New game</h1>
+  <p class="fs-3"><%= @letters.join(" ") %></p>
+
+  <div class="col-2">
+    <p class="mb-1 fw-lighter">What is the longest world you can find?</p>
+      <form action="/score" method="TODO" data-turbo="false" class="input-group mb-3 rounded-3">
+        <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+        <%= hidden_field_tag :letters, @letters %>
+        <input type="text" name="word" value="<%= params[:word] %>" class="form-control">
+        <input type="submit" value="Play" class="btn btn-outline-secondary">
+      </form>
+  </div>
+</div>
